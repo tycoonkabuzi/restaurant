@@ -6,6 +6,7 @@ const mainCarousel=document.querySelector(".main__table");
 const smallImage=document.querySelectorAll(".main__items");
 const previous=document.getElementById("left");
 const next=document.getElementById("right");
+const first=document.querySelector(".main__element");
 
 
 function converter(domElement){//function to convert dom element into real arrays
@@ -25,10 +26,6 @@ for (elementArray in converter(bigElement)){
 
 
 function tableTurn(target){
-    if (target=null){
-        const equalizer=0;
-        target=equalizer;
-    }
     const degre=(90*target);
     mainCarousel.style.transform="rotate(-"+degre+"deg)";
     return degre;
@@ -84,11 +81,20 @@ next.addEventListener("click",()=>{
     const currentSmallImage=document.querySelector('.mark');
     const currentStars=document.querySelector(".current");
     const singleElement=document.querySelector(".present");
-    const nextSingleElement=singleElement.nextElementSibling;
-    const index=converter(bigElement).findIndex((element)=>element==nextSingleElement);
+    let  nextSingleElement=singleElement.nextElementSibling;
+    let index=0;// here we are initializing the index to zero 
+    if (nextSingleElement==null){// here we are creating a mechanism to help us when we click to the next buttton when we are at the end of our carousel to return to the begining of the line
+        index=converter(bigElement).findIndex((element)=>element==first);
+        first.classList.add("present");
+        console.log(index);
+    }
+    else{
 
-    singleElement.classList.remove("present");
-    nextSingleElement.classList.add("present");
+        index=converter(bigElement).findIndex((element)=>element==nextSingleElement);
+        singleElement.classList.remove("present");
+        nextSingleElement.classList.add("present");
+    }
+  
     currentSmallImage.classList.remove('mark');
     smallCarousel.classList.add('mark');
     animateFoodText(index);//calling the function animateFoodText
@@ -101,9 +107,21 @@ previous.addEventListener("click",()=>{
     const currentStars=document.querySelector(".current");
     const singleElement=document.querySelector(".present");
     const previousSingleElement=singleElement.previousElementSibling;
-    const index=converter(bigElement).findIndex((element)=>element==previousSingleElement);
-    singleElement.classList.remove("present");
-    previousSingleElement.classList.add("present");
+    let index=0;
+    if (previousSingleElement==null){// here we are creating a mechanism to help us when we click to the next buttton when we are at the end of our carousel to return to the begining of the line
+        index=converter(bigElement).findIndex((element)=> element===converter(bigElement)[converter(bigElement).length-1]);
+        console.log(index);
+
+        //console.log(length-1);
+        //console.log(converter(bigElement)[length-1]);
+        //index=length-1;
+    }
+    else{
+
+        index=converter(bigElement).findIndex((element)=>element==previousSingleElement);
+        singleElement.classList.remove("present");
+        previousSingleElement.classList.add("present");
+    }
     animateFoodText(index);
     changeTableColor(tableTurn(index));
     changeNotice(currentStars,index);
