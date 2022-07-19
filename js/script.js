@@ -7,7 +7,9 @@ const smallImage=document.querySelectorAll(".main__items");
 const previous=document.getElementById("left");
 const next=document.getElementById("right");
 const first=document.querySelector(".main__element");
-
+const searchTextTitle=document.querySelector(".main__searchText h3");
+const searchTextDescription=document.querySelector(".main__searchText p");
+const searchFoodImage=document.getElementById("imageFood");
 
 function converter(domElement){//function to convert dom element into real arrays
     const elementArray=[];
@@ -27,7 +29,9 @@ for (elementArray in converter(bigElement)){
 
 function tableTurn(target){
     const degre=(90*target);
+    console.log(target);
     mainCarousel.style.transform="rotate(-"+degre+"deg)";
+    
     return degre;
 }
 function changeTableColor(numberOfDegree){
@@ -128,4 +132,27 @@ previous.addEventListener("click",()=>{
 
 });
 
+const search=document.querySelector(".main__search");
+async function getMeal(){
+    const response= await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=Shawarma");
+    let result= await response.json();
+    console.log(result);
+    //console.log(result.meals[0].strInstructions);
+}
+getMeal();
+search.addEventListener("keypress",async(event)=>{
+    const searchInput=document.getElementById("inputSearch").value.trim();
+    const response=await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${searchInput}`);
+    console.log(searchInput);
+    console.log(response);
+    let result=await response.json();
+    if (event.key==="Enter"){
+        search.classList.add("change");
+        document.querySelector(".main__searchResult").classList.add("show");
+        searchTextTitle.innerHTML=result.meals[0].strMeal;
+        searchTextDescription.innerHTML=result.meals[0].strInstructions;
+        searchFoodImage.src=result.meals[0].strMealThumb;
+    }
+    
+});
 

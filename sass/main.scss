@@ -206,11 +206,96 @@ $color-border-botton:#37190f15;
           
         }   
        
-        
-        
-
     }
-   
+    &__search.change{
+        position: absolute;
+        width: 50vh;
+        z-index: 6;
+        top: 10vh;
+        left: 35%;
+        input{
+            width: 50vh;
+            height: 7vh;
+            cursor: text;
+            color: $primary-color;
+            &::placeholder{
+                padding-left: 20vh;
+                color:$primary-color;
+            }
+        }
+       
+        img{
+            margin-left: 45vh;
+            margin-top: 2vh;
+        }
+        &:focus-within{
+            width: 50vh;
+            height: 7vh;
+            transform: translateX(0vh);
+            background-color:$Lighten-primary-color;
+            input{
+                width: 50vh;
+                height: 7vh;
+                background-color:$Lighten-primary-color;
+
+              }
+             
+              img{
+                margin-left: 45vh;
+                margin-top: 2vh;
+              }
+        }
+    }
+
+    &__returnSearch{
+        img{
+            width: 5vh;
+            position: absolute;
+            top: 10vh;
+            left: 5vh;
+        }
+    }
+
+    &__searchResult{
+        transform: scale(0);
+        width: 100%;
+        height: 100%;
+        background-color:white;
+        position: absolute;
+        z-index: 5;
+        right:0;
+        left: 0;
+        top: 0;
+        padding-top: 20vh;
+        box-shadow: 2vh 1vh 20vh rgba(128, 128, 128, 0.167);
+    }
+    &__searchResult.show{
+        transform: scale(1);
+        
+        
+    }
+    &__title{
+        margin-top: 5vh;
+        margin-left: 10vh;
+        color: rgb(88, 88, 88);
+        margin-left: 30vh;
+    }
+  
+    &__contentElement{
+        color: rgb(123, 123, 123);
+        display: grid;
+        grid-template-columns:25vh auto;
+        margin-top: 5vh;
+        margin-left: 30vh;
+    
+        img{
+            width: 50vh;
+        }
+    }
+    &__searchText{
+        width: 100vh;
+        margin-left: 30vh;
+    }
     &__humbourger{
         span{
             display: block;
