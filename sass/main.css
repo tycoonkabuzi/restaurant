@@ -37,6 +37,11 @@ body {
   background-size: cover;
   padding-top: 15vh;
 }
+.main__right {
+  background-image: url("/images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .main__infoBox {
   transform: scale(0);
   position: absolute;
@@ -140,13 +145,19 @@ body {
 }
 .main__header {
   width: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
   padding-left: 5vh;
-  padding-top: 7vh;
-  padding-bottom: 7vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
   display: grid;
   grid-template-columns: auto auto auto;
   align-content: center;
   align-items: center;
+  background-color: rgb(228, 228, 228);
+  position: absolute;
+  z-index: 1;
+  left: 0;
 }
 .main__header h1 {
   color: #37190f;
@@ -312,11 +323,11 @@ body {
 }
 .main__body {
   width: 100%;
-  height: 85vh;
+  height: 100vh;
   overflow: hidden;
 }
 .main__table {
-  margin-top: 10vh;
+  margin-top: 30vh;
   width: 200vh;
   height: 200vh;
   border-radius: 200vh;
@@ -469,6 +480,7 @@ body {
 
 .banner {
   width: 100%;
+  margin-top: 50px;
 }
 
 .speciality {
@@ -596,4 +608,40 @@ body {
 .chiefs__field__item__experience {
   text-align: center;
   color: #37190f;
+}
+
+.booking {
+  width: 80%;
+  margin: auto;
+}
+.booking__container {
+  margin: auto;
+  margin-top: 150px;
+  display: grid;
+  grid-template-columns: auto auto;
+  padding-bottom: 20px;
+}
+.booking__text {
+  padding-top: 20px;
+  border-top: 1px solid rgba(55, 25, 15, 0.0823529412);
+}
+
+.footer {
+  width: 100%;
+  background-color: rgb(228, 228, 228);
+}
+.footer__container {
+  width: 80%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  padding-top: 50px;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
+.footer h2 {
+  padding-bottom: 20px;
+}
+.footer li {
+  list-style: none;
 }/*# sourceMappingURL=main.css.map */
