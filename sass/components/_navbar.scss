@@ -1,0 +1,130 @@
+.header {
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  padding-left: 5vh;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-content: center;
+  align-items: center;
+  background-color: rgb(228, 228, 228);
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  h1 {
+    color: $primary-color;
+  }
+  &--links {
+    li {
+      list-style: none;
+      display: inline;
+      padding-left: 40px;
+      cursor: pointer;
+      &:hover {
+        color: $second-color;
+      }
+    }
+  }
+  &__search {
+    width: 5vh;
+    height: 5vh;
+    transition: 200ms;
+    border-radius: 1vh;
+    input {
+      width: 5vh;
+      height: 5vh;
+      border: 0.4vh solid $color-border-botton;
+      border-radius: 1vh;
+      background-color: $Lighten-primary-color;
+      transition: 200ms;
+      color: #37190f00;
+      cursor: pointer;
+      &::placeholder {
+        color: #37190f00;
+      }
+    }
+    img {
+      width: 3vh;
+      height: 3vh;
+      position: absolute;
+      pointer-events: none;
+      cursor: pointer;
+      transition: 200ms;
+      margin-left: 1vh;
+      margin-top: 1vh;
+    }
+    cursor: pointer;
+
+    &:focus-within {
+      background-color: $Lighten-primary-color;
+      width: 30vh;
+      transform: translateX(-25vh);
+
+      input {
+        width: 30vh;
+        height: 5vh;
+        border: 0.4vh solid $color-border-botton;
+        border-radius: 1vh;
+        background-color: $Lighten-primary-color;
+        color: $primary-color;
+        cursor: pointer;
+        &::placeholder {
+          color: $primary-color;
+        }
+      }
+      img {
+        margin-left: 25vh;
+        margin-top: 1vh;
+      }
+    }
+  }
+  &__search.change {
+    position: absolute;
+    width: 50vh;
+    z-index: 6;
+    top: 10vh;
+    left: 35%;
+    input {
+      width: 50vh;
+      height: 7vh;
+      cursor: text;
+      color: $primary-color;
+      &::placeholder {
+        padding-left: 20vh;
+        color: $primary-color;
+      }
+    }
+
+    img {
+      margin-left: 45vh;
+      margin-top: 2vh;
+    }
+    &:focus-within {
+      width: 50vh;
+      height: 7vh;
+      transform: translateX(0vh);
+      background-color: $Lighten-primary-color;
+      input {
+        width: 50vh;
+        height: 7vh;
+        background-color: $Lighten-primary-color;
+      }
+
+      img {
+        margin-left: 45vh;
+        margin-top: 2vh;
+      }
+    }
+  }
+
+  &__returnSearch {
+    img {
+      width: 5vh;
+      position: absolute;
+      top: 10vh;
+      left: 5vh;
+    }
+  }
+}

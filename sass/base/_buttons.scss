@@ -1,0 +1,27 @@
+@mixin boutons {
+  cursor: pointer;
+  background-color: $Lighten-primary-color;
+  width: 8vh;
+  height: 8vh;
+  border: 0.4vh solid $color-border-botton;
+  border-radius: 1.7vh;
+  img {
+    width: 5vh;
+    height: 5vh;
+    margin: auto;
+  }
+}
+.primary-button {
+  background-color: $second-color;
+  color: $color-backgroundOpac;
+  width: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 40px;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: $primary-color;
+    transition: background-color ease-in 0.3s;
+  }
+}

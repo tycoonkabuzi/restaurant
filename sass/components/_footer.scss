@@ -1,0 +1,19 @@
+.footer {
+  width: 100%;
+  background-color: rgb(228, 228, 228);
+  &__container {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    padding-top: 50px;
+    margin-top: 50px;
+    padding-bottom: 50px;
+  }
+  h2 {
+    padding-bottom: 20px;
+  }
+  li {
+    list-style: none;
+  }
+}
