@@ -19,12 +19,17 @@
   &--links {
     li {
       list-style: none;
+
       display: inline;
-      padding-left: 40px;
-      cursor: pointer;
-      &:hover {
-        color: $second-color;
+      margin-left: 20px;
+      a {
+        text-decoration: none;
+        color: $primary-color;
+        &:hover {
+          color: $second-color;
+        }
       }
+      cursor: pointer;
     }
   }
   &__search {

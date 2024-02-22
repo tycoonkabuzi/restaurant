@@ -8,6 +8,7 @@
 
 body {
   background-color: rgb(235, 235, 235);
+  color: rgb(69, 69, 69);
 }
 
 .header {
@@ -32,10 +33,14 @@ body {
 .header--links li {
   list-style: none;
   display: inline;
-  padding-left: 40px;
+  margin-left: 20px;
   cursor: pointer;
 }
-.header--links li:hover {
+.header--links li a {
+  text-decoration: none;
+  color: #37190f;
+}
+.header--links li a:hover {
   color: rgba(183, 98, 1, 0.584);
 }
 .header__search {
@@ -199,6 +204,9 @@ body {
   display: inline-block;
   margin-right: 5vh;
   cursor: pointer;
+}
+.main__headText ul li a {
+  text-decoration: none;
 }
 .main__headText ul:hover {
   font-weight: 700;
@@ -473,7 +481,7 @@ body {
 }
 .main__chair {
   position: absolute;
-  bottom: 10vh;
+  bottom: 5vh;
   rotate: -45deg;
   left: 40vh;
   z-index: 1;
@@ -507,7 +515,7 @@ body {
 }
 
 .ingridients {
-  color: rgb(101, 100, 100);
+  color: rgb(69, 69, 69);
   padding-top: 100px;
   width: 80%;
   margin: auto;
@@ -564,7 +572,7 @@ body {
 }
 
 .chiefs {
-  color: rgb(101, 100, 100);
+  color: rgb(69, 69, 69);
   width: 80%;
   margin: auto;
 }
@@ -722,6 +730,107 @@ body {
   position: absolute;
   left: 50px;
   top: -50px;
+}
+
+.imageMenuAbout {
+  background-image: url("../../images/menuBacktroundAbout.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+}
+.imageMenuAbout::before {
+  content: "";
+  width: 100%;
+  background-color: #37190f;
+  height: inherit;
+  position: absolute;
+  opacity: 0.6;
+}
+.imageMenuAbout h1 {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.8274509804);
+  display: block;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  top: 25%;
+  font-size: 70px;
+}
+
+.mainAbout {
+  display: grid;
+  grid-template-columns: auto 50%;
+  overflow: hidden;
+}
+.mainAbout__cover {
+  display: grid;
+  grid-template-columns: auto auto;
+  margin-top: 50px;
+  margin-left: 100px;
+}
+.mainAbout__cover__picture {
+  position: relative;
+  width: 250px;
+}
+.mainAbout__cover__picture img {
+  width: 100%;
+}
+.mainAbout__cover__picture__names {
+  position: absolute;
+  top: 10px;
+  right: -200px;
+}
+.mainAbout__cover__picture__names hr {
+  background-color: #37190f;
+  width: 100px;
+  height: 1px;
+  position: absolute;
+  left: -120px;
+  top: 14px;
+}
+.mainAbout__cover__picture--2nd {
+  position: relative;
+  width: 250px;
+  margin-top: 100px;
+}
+.mainAbout__cover__picture--2nd__names {
+  position: absolute;
+  bottom: 10px;
+  left: -200px;
+}
+.mainAbout__cover__picture--2nd__names hr {
+  background-color: #37190f;
+  width: 100px;
+  height: 1px;
+  position: absolute;
+  right: -120px;
+  top: 14px;
+}
+.mainAbout__cover__picture--2nd img {
+  width: 100%;
+}
+.mainAbout__text {
+  width: 70%;
+  margin-left: 50px;
+  display: relative;
+  z-index: 3;
+  margin-top: 100px;
+}
+.mainAbout__aboutUs {
+  background-color: rgb(214, 214, 214);
+  height: 500px;
+  position: relative;
+}
+.mainAbout__aboutUs__chiffre {
+  color: rgb(235, 235, 235);
+  font-size: 300px;
+  font-weight: 900;
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  right: -150px;
+  top: -80px;
+  rotate: -20deg;
 }
 
 .footer {

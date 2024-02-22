@@ -43,7 +43,11 @@
         display: inline-block;
         margin-right: 5vh;
         cursor: pointer;
+        a {
+          text-decoration: none;
+        }
       }
+
       &:hover {
         font-weight: 700;
       }
@@ -300,7 +304,7 @@
   }
   &__chair {
     position: absolute;
-    bottom: 10vh;
+    bottom: 5vh;
     rotate: -45deg;
     left: 40vh;
     z-index: 1;
