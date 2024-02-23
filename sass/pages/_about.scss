@@ -80,6 +80,13 @@
     display: relative;
     z-index: 3;
     margin-top: 100px;
+    h2 {
+      padding-bottom: 20px;
+    }
+    ul {
+      padding-top: 20px;
+      margin-left: 30px;
+    }
   }
   &__aboutUs {
     background-color: rgb(214, 214, 214);
@@ -96,6 +103,74 @@
       right: -150px;
       top: -80px;
       rotate: -20deg;
+    }
+  }
+}
+.bannerAbout {
+  margin-top: 100px;
+  h1 {
+    margin-right: 50px;
+  }
+  padding: 70px;
+  display: grid;
+  grid-template-columns: auto auto;
+
+  background-color: $primary-color;
+  color: $color-backgroundOpac;
+}
+.giveBack {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding-top: 20px;
+  overflow: hidden;
+  &__title {
+    background-color: $second-color;
+    color: $color-backgroundOpac;
+    height: 900px;
+
+    &__image {
+      display: grid;
+      grid-template-columns: auto auto;
+      position: absolute;
+      left: 300px;
+      height: 450px;
+      overflow: hidden;
+      img {
+        width: 700px;
+      }
+      &__leftSide {
+        display: grid;
+        grid-template-rows: auto;
+        justify-content: space-between;
+        background-color: $primary-color;
+        width: 70px;
+        height: 700px;
+        h5 {
+          margin-top: 40px;
+          margin-left: 10px;
+        }
+        &__direction {
+          img {
+            padding-top: 350px;
+            width: 40px;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+    h1 {
+      width: 350px;
+      text-align: left;
+      margin-left: 100px;
+      margin-top: 100px;
+    }
+  }
+  &__description {
+    margin-left: 100px;
+    margin-top: 100px;
+    width: 300px;
+    h2 {
+      margin-bottom: 20px;
     }
   }
 }
