@@ -10,6 +10,29 @@ const first = document.querySelector(".main__element");
 const searchTextTitle = document.querySelector(".main__searchText h3");
 const searchTextDescription = document.querySelector(".main__searchText p");
 const searchFoodImage = document.getElementById("imageFood");
+const header = document.querySelector(".header");
+const banner = document.querySelector(".banner");
+function onScrollNav(domElement, height) {
+  if (window.scrollY > height) {
+    if (domElement === header) {
+      domElement.style.position = "fixed";
+      domElement.style.marginTop = "0";
+    }
+
+    if (domElement === banner || height > 800) {
+      domElement.style.animation = "fade 2s ease-in forward";
+    } else {
+      domElement.style.animation = "none";
+    }
+  } else {
+    domElement.style.position = "absolute";
+    domElement.style.marginTop = "20px";
+  }
+}
+window.addEventListener("scroll", () => {
+  onScrollNav(header, 300);
+  onScrollNav(banner, 900);
+});
 
 function converter(domElement) {
   //function to convert dom element into real arrays
@@ -79,12 +102,12 @@ next.addEventListener("click", () => {
   const currentStars = document.querySelector(".current");
   const singleElement = document.querySelector(".present");
   let nextSingleElement = singleElement.nextElementSibling;
+
   let index = 0; // here we are initializing the index to zero
   if (nextSingleElement == null) {
     // here we are creating a mechanism to help us when we click to the next buttton when we are at the end of our carousel to return to the begining of the line
     index = converter(bigElement).findIndex((element) => element == first);
     first.classList.add("present");
-    console.log(index);
   } else {
     index = converter(bigElement).findIndex(
       (element) => element == nextSingleElement
@@ -104,13 +127,13 @@ previous.addEventListener("click", () => {
   const singleElement = document.querySelector(".present");
   const previousSingleElement = singleElement.previousElementSibling;
   let index = 0;
+
   if (previousSingleElement == null) {
     // here we are creating a mechanism to help us when we click to the next buttton when we are at the end of our carousel to return to the begining of the line
     index = converter(bigElement).findIndex(
       (element) =>
         element === converter(bigElement)[converter(bigElement).length - 1]
     );
-    console.log(index);
 
     //console.log(length-1);
     //console.log(converter(bigElement)[length-1]);
@@ -125,6 +148,9 @@ previous.addEventListener("click", () => {
   animateFoodText(index);
   changeTableColor(tableTurn(index));
   changeNotice(currentStars, index);
+  const chiefWord = document.querySelector(".current");
+  console.log(chiefWord);
+  chiefWord.style.animation = "fade ease-in 1s forwards 1s";
 });
 
 const search = document.querySelector(".main__search");

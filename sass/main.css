@@ -24,11 +24,16 @@ body {
   align-items: center;
   background-color: rgb(228, 228, 228);
   position: absolute;
-  z-index: 1;
+  z-index: 5;
   left: 0;
+  transition: margin-top 0.3s ease-in-out;
 }
-.header h1 {
+.header h1 a {
+  text-decoration: none;
   color: #37190f;
+}
+.header h1 a:hover {
+  color: rgba(183, 98, 1, 0.584);
 }
 .header--links li {
   list-style: none;
@@ -182,6 +187,7 @@ body {
 .main__infoBox {
   transform: scale(0);
   position: absolute;
+  animation: fade ease-in 1s forwards;
 }
 .main__infoBox.current {
   position: relative;
@@ -485,6 +491,7 @@ body {
   rotate: -45deg;
   left: 40vh;
   z-index: 1;
+  animation: moveFromToptoBottom 1s ease-in-out forwards;
 }
 
 .banner {
@@ -635,6 +642,22 @@ body {
   border-top: 1px solid rgba(55, 25, 15, 0.0823529412);
 }
 
+@keyframes moveFromToptoBottom {
+  from {
+    transform: translateY(-200px);
+  }
+  to {
+    transform: translateY(0px);
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 .imageMenu {
   background-image: url("../../images/menuBackground.jpg");
   background-repeat: no-repeat;
