@@ -6,7 +6,7 @@
   padding-top: 2vh;
   padding-bottom: 2vh;
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto 100px 100px;
   align-content: center;
   align-items: center;
   background-color: rgb(228, 228, 228);
@@ -39,6 +39,7 @@
       cursor: pointer;
     }
   }
+
   &__search {
     width: 5vh;
     height: 5vh;
@@ -92,6 +93,7 @@
       }
     }
   }
+
   &__search.change {
     position: absolute;
     width: 50vh;
@@ -137,6 +139,13 @@
       position: absolute;
       top: 10vh;
       left: 5vh;
+    }
+  }
+  &--shop {
+    color: red;
+    width: 40px;
+    img {
+      width: 100%;
     }
   }
 }
