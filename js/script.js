@@ -1,4 +1,5 @@
 //Want to put on the same line the elements
+
 const bigElement = document.querySelectorAll(".main__element");
 const item = document.querySelector(".main__element");
 const smallCarousel = document.querySelector(".main__smallImages");
@@ -179,3 +180,5 @@ search.addEventListener("keypress", async (event) => {
     searchFoodImage.src = result.meals[0].strMealThumb;
   }
 });
+
+// Menu updating element
