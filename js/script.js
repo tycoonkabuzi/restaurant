@@ -15,24 +15,19 @@ const header = document.querySelector(".header");
 const banner = document.querySelector(".banner");
 function onScrollNav(domElement, height) {
   if (window.scrollY > height) {
-    if (domElement === header) {
-      domElement.style.position = "fixed";
-      domElement.style.marginTop = "0";
-    }
+    domElement.style.position = "fixed";
+    domElement.style.marginTop = "0";
 
-    if (domElement === banner || height > 800) {
-      domElement.style.animation = "fade 2s ease-in forward";
-    } else {
-      domElement.style.animation = "none";
-    }
+    domElement.style.animation = "fade 2s ease-in forward";
+
+    domElement.style.animation = "none";
   } else {
     domElement.style.position = "absolute";
     domElement.style.marginTop = "20px";
   }
 }
 window.addEventListener("scroll", () => {
-  onScrollNav(header, 300);
-  onScrollNav(banner, 900);
+  onScrollNav(header, 30);
 });
 
 function converter(domElement) {

@@ -1,3 +1,4 @@
+@import "../base//mixins";
 .footer {
   width: 100%;
   background-color: rgb(228, 228, 228);
@@ -9,6 +10,10 @@
     padding-top: 50px;
 
     padding-bottom: 50px;
+
+    @include extra-small {
+      grid-template-columns: auto;
+    }
   }
   h2 {
     padding-bottom: 20px;
